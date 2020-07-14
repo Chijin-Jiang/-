@@ -1,1 +1,30 @@
+++ 627回文字符串
+
+def valid_palindrome(self, s):
+	ans = 0
+	cnt = collections.count(s)
+	for i in cnt.value():
+		ans = i // 2 * 2
+		if ans % 2 == 0 and i % 2 == 1:
+			ans += 1
+	
+	return ans
+
+
+++ 13字符串查找
+def strstr(self, s, source, target):
+	if not source or not target:
+		return -1
+	
+	len_s = len(source)
+	len_t = len(target)
+	for i in range(len_s):
+		for j in range(len_t):
+			if source[i + j] != target[j]:
+				break
+		else:
+			return i
+	return -1
+
+
 
